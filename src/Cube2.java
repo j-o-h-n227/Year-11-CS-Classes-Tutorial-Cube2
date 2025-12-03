@@ -46,14 +46,10 @@ public class Cube2 {
     }
 
     public static boolean pythag(int side1, int side2, int side3) {
-        int large = 0;
-        if (side1 <= side2 && side2 <= side3) {large = side3;}
-        if (side1 <= side3 && side3 <= side2) {large = side2;}
-        if (side2 <= side3 && side3 <= side1) {large = side1;}
-        if (side2 <= side1 && side1 <= side3) {large = side3;}
-        if (side3 <= side1 && side1 <= side2) {large = side2;}
-        if (side3 <= side2 && side2 <= side1) {large = side1;}
-        return side1 * side1 + side2 * side2 == large * large;
+        if (side1 <= side3 && side2 <= side3) {return side1 * side1 + side2 * side2 == side3 * side3;}
+        if (side1 <= side2 && side3 <= side2) {return side1 * side1 + side3 * side3 == side2 * side2;}
+        if (side2 <= side1 && side3 <= side1) {return side2 * side2 + side3 * side3 == side1 * side1;}
+        return false;
     }
 
     public Cube2 minus(Cube2 otherCube) { 
